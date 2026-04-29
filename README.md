@@ -9,21 +9,21 @@ Diseña una aplicación para gestionar comercios.
 
 Debes crear:
 
-Comercio (abstracta)
-TiendaFisica
-TiendaOnline
-TipoComercio (enum)
-GestorComercios
+modelo.Comercio (abstracta)
+modelo.TiendaFisica
+modelo.TiendaOnline
+modelo.TipoComercio (enum)
+controlador.GestorComercios
 1. Enum — 1 punto
    ALIMENTACION, ROPA, ELECTRONICA, SERVICIOS
-2. Clase abstracta Comercio — 2 puntos
+2. Clase abstracta modelo.Comercio — 2 puntos
 
 Atributos:
 
 private final String id;
 private String nombre;
 private String ciudad;
-private TipoComercio tipoComercio;
+private modelo.TipoComercio tipoComercio;
 
 Requisitos:
 
@@ -34,14 +34,14 @@ Método abstracto:
 public abstract double calcularCosteOperacion();
 toString() con StringBuilder
 3. Clases hijas — 2 puntos
-   TiendaFisica
+   modelo.TiendaFisica
    private int numeroEmpleados;
 
 Coste:
 
 Base: 1000
 +200 si empleados > 5
-TiendaOnline
+modelo.TiendaOnline
 private boolean tieneEnvioInternacional;
 
 Coste:
@@ -53,22 +53,22 @@ Ambas clases:
 
 Implementan calcularCosteOperacion()
 Sobrescriben toString()
-4. Clase GestorComercios — 4 puntos
+4. Clase controlador.GestorComercios — 4 puntos
 
 Atributo:
 
-private ArrayList<Comercio> comercios;
+private ArrayList<modelo.Comercio> comercios;
 
 Métodos:
 
-añadirComercio(Comercio c)
+añadirComercio(modelo.Comercio c)
 buscarPorId(String id)
 buscarPorNombre(String nombre) // coincidencia exacta
-buscarPorTipoComercio(TipoComercio tipo)
+buscarPorTipoComercio(modelo.TipoComercio tipo)
 eliminarPorId(String id)
 modificarCiudad(String id, String nuevaCiudad)
 imprimirTodos()
-imprimirPorTipoComercio(TipoComercio tipo)
+imprimirPorTipoComercio(modelo.TipoComercio tipo)
 5. Buenas prácticas — 1 punto
    Encapsulación correcta
    Uso de herencia y polimorfismo

@@ -1,3 +1,8 @@
+package controlador;
+
+import modelo.Comercio;
+import modelo.TipoComercio;
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -8,7 +13,7 @@ public class GestorComercios {
         comercios = new ArrayList<>();
     }
 
-//    añadirComercio(Comercio c)
+//    añadirComercio(modelo.Comercio c)
     public boolean aniadirComercio(Comercio c){
         boolean resultado = false;
         if(!comercios.contains(c)){
@@ -22,7 +27,7 @@ public class GestorComercios {
 //    buscarPorId(String id)
     public Comercio buscarComercioPorId(String id){
         Comercio resultado = null;
-        Comercio resultadoTemporal = null;
+        Comercio resultadoTemporal;
         int posicionComprobacion = 0;
         int maximo;
 
@@ -41,7 +46,7 @@ public class GestorComercios {
 //    buscarPorNombre(String nombre) // coincidencia exacta
     public Comercio buscarComercioPorNombre(String nombre){
     Comercio resultado = null;
-    Comercio resultadoTemporal = null;
+    Comercio resultadoTemporal;
     int posicionComprobacion = 0;
     int maximo;
 
@@ -57,7 +62,7 @@ public class GestorComercios {
     return resultado;
 }
 
-//    buscarPorTipoComercio(TipoComercio tipo)
+//    buscarPorTipoComercio(modelo.TipoComercio tipo)
     public ArrayList<Comercio> buscarPorTipoComercio(TipoComercio tipoComercio){
         ArrayList<Comercio> resultado;
 
@@ -107,7 +112,7 @@ public class GestorComercios {
         return sb.toString();
     }
 
-//    imprimirPorTipoComercio(TipoComercio tipo)
+//    imprimirPorTipoComercio(modelo.TipoComercio tipo)
     public String imprimirPorTipoDeComercio(TipoComercio tipo){
         StringBuilder sb = new StringBuilder();
         for (Comercio c : comercios){

@@ -1,4 +1,6 @@
-public class TiendaOnline extends Comercio{
+package modelo;
+
+public class TiendaOnline extends Comercio {
     private boolean tieneEnvioInternacional;
     public final int COSTE_BASE = 500;
     public final int COSTE_SI_ENVIO_INTER = 150;

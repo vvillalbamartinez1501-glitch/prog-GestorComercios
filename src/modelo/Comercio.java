@@ -1,3 +1,5 @@
+package modelo;
+
 public abstract class Comercio {
     private final String ID;
     private String nombre;

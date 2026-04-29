@@ -1,5 +1,6 @@
+package modelo;
 
-public class TiendaFisica extends Comercio{
+public class TiendaFisica extends Comercio {
 
     private int numeroEmpleados;
     public final int COSTE_BASE = 1000;
