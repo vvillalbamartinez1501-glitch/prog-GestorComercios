@@ -115,8 +115,10 @@ public class GestorComercios {
 //    imprimirPorTipoComercio(modelo.TipoComercio tipo)
     public String imprimirPorTipoDeComercio(TipoComercio tipo){
         StringBuilder sb = new StringBuilder();
+        sb.append(String.format("Comercios tipo %s: \n", tipo));
         for (Comercio c : comercios){
             if (c.getTipoComercio() == tipo){
+                sb.append("\t");
                 sb.append(c.toString());
                 sb.append("\n");
             }
