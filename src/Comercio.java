@@ -40,7 +40,7 @@ public abstract class Comercio {
     }
 
     // un metodo es abstracto cuando no tiene cuerpo, solo firma
-    public abstract double calcularCosteOperacion(){}
+    public abstract double calcularCosteOperacion();
 
     public String toString(){
         StringBuilder sb = new StringBuilder();
