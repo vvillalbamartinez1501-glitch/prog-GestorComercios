@@ -12,12 +12,9 @@ public class TiendaOnline extends Comercio{
     // Base: 500
     @Override
     public double calcularCosteOperacion(){
-        double resultado = COSTE_BASE;
-        if (tieneEnvioInternacional){
-            resultado += COSTE_SI_ENVIO_INTER;
-        }
-
-        return resultado;
+        double costeFinal;
+        costeFinal = tieneEnvioInternacional ? COSTE_BASE + COSTE_SI_ENVIO_INTER : COSTE_BASE;
+        return costeFinal;
     }
 
     @Override
@@ -30,6 +27,7 @@ public class TiendaOnline extends Comercio{
         } else{
             sb.append("\tNo tiene envío internacional");
         }
+        sb.append(String.format("Precio final: %.2f",calcularCosteOperacion()));
 
         return sb.toString();
     }

@@ -22,12 +22,20 @@ public class TiendaFisica extends Comercio{
     // Base: 1000
     @Override
     public double calcularCosteOperacion(){
-        int resultado = COSTE_BASE;
-        if (numeroEmpleados > 5){
-            resultado += COSTE_SI_EMP_5;
-        }
+        double costeFinal;
 
-        return resultado;
+        // numeroEmpleados > 5 ? costeFinal = COSTE_BASE + COSTE_SI_EMP_5 : costeFinal = COSTE_BASE;
+        // variable valor de: condicion ? si verdadero :  si falso
+        costeFinal = numeroEmpleados > 5 ? COSTE_BASE + COSTE_SI_EMP_5 : COSTE_BASE;
+
+        /*
+        costeFinal = COSTE_BASE;
+        if (numeroEMpleados > 5 ){
+            costeFinal += COSTE_SI_EMP_5
+        }
+         */
+
+        return costeFinal;
     }
 
     @Override
@@ -36,6 +44,7 @@ public class TiendaFisica extends Comercio{
         sb.append(super.toString());
         sb.append("\tTienda Física");
         sb.append(String.format("\tNumero de empleados: %d",numeroEmpleados));
+        sb.append(String.format("Precio final: %.2f",calcularCosteOperacion()));
         return sb.toString();
     }
 }
