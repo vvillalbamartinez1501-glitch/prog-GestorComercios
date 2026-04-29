@@ -7,10 +7,14 @@ public class TiendaOnline extends Comercio{
         super(ID, nombre, ciudad, tipoComercio);
         this.tieneEnvioInternacional = tieneEnvioInternacional;
     }
+
     public boolean isTieneEnvioInternacional() {
         return tieneEnvioInternacional;
     }
 
+    public void  setTieneEnvioInternacional(boolean tieneEnvioInternacional) {
+        this.tieneEnvioInternacional = tieneEnvioInternacional;
+    }
 
     // Base: 500
     @Override
