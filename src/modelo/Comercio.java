@@ -47,7 +47,7 @@ public abstract class Comercio {
     public String toString(){
         StringBuilder sb = new StringBuilder();
 
-        sb.append(String.format("[%d] - %s Localidad: %s Tipo de comercio. %s",ID,nombre,ciudad,tipoComercio));
+        sb.append(String.format("[%s] - %s Localidad: %s Tipo de comercio. %s",ID,nombre,ciudad,tipoComercio));
 
         return sb.toString();
     }

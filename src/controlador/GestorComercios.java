@@ -1,6 +1,8 @@
 package controlador;
 
 import modelo.Comercio;
+import modelo.TiendaFisica;
+import modelo.TiendaOnline;
 import modelo.TipoComercio;
 
 import java.util.List;
@@ -126,6 +128,66 @@ public class GestorComercios {
             }
         }
         return sb.toString();
+    }
+
+    public String listarComercios(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("Comercios: \n");
+        for (Comercio c : comercios){
+            sb.append("\t");
+            sb.append(c.toString());
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
+
+// imprimir potTIpoComercio
+    public String listarTiendasFisicas(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("Comercios físicos %s: \n");
+        for (Comercio c : comercios){
+            if (c instanceof TiendaFisica){
+                sb.append("\t");
+                sb.append(c.toString());
+                sb.append("\n");
+            }
+        }
+        return sb.toString();
+    }
+
+    public String listarTiendasOnline(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("Comercios online %s: \n");
+        for (Comercio c : comercios){
+            if (c instanceof TiendaOnline){
+                sb.append("\t");
+                sb.append(c.toString());
+                sb.append("\n");
+            }
+        }
+        return sb.toString();
+    }
+
+    public String[] listarTiendasPorTipo(){
+        String[] lista = new String[2];
+        // posicion 0, Tienda Fisica posicion 1 tienda online
+        int pFisica = 0;
+        int pOnline = 1;
+        StringBuilder sbF = new StringBuilder();
+        StringBuilder sbO = new StringBuilder();
+
+
+        for (Comercio c : comercios){
+            if (c instanceof TiendaFisica){
+                sbF.append(c.toString());
+            } else if (c instanceof TiendaOnline){
+                sbO.append(c.toString());
+            }
+        }
+
+        lista[pFisica] += sbF.toString();
+        lista[pOnline] += sbF.toString();
+        return lista;
     }
 
 }
