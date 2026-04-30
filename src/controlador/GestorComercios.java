@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class GestorComercios {
+    // al ser privada, da igual declararlo como Collection o como lista, pero al ser visible para otros, es preferible dejar que vean que es una collection a una Lista o ArrayList
+    // cuanto más generico es preferible que algo sea percibido, más primigenio el tipo de dato
     private List<Comercio> comercios;
 
     public GestorComercios(){
