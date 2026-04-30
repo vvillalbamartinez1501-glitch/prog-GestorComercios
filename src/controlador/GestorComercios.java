@@ -49,21 +49,21 @@ public class GestorComercios {
 
 //    buscarPorNombre(String nombre) // coincidencia exacta
     public Comercio buscarComercioPorNombre(String nombre){
-    Comercio resultado = null;
-    Comercio resultadoTemporal;
-    int posicionComprobacion = 0;
-    int maximo;
+        Comercio resultado = null;
+        Comercio resultadoTemporal;
+        int posicionComprobacion = 0;
+        int maximo;
 
-    maximo = comercios.size();
+        maximo = comercios.size();
 
-    while (maximo > 0 && posicionComprobacion < maximo && resultado == null){
-        resultadoTemporal = comercios.get(posicionComprobacion);
-        if (resultadoTemporal.getId().equalsIgnoreCase(nombre)){
-            resultado = resultadoTemporal;
+        while (maximo > 0 && posicionComprobacion < maximo && resultado == null){
+            resultadoTemporal = comercios.get(posicionComprobacion);
+            if (resultadoTemporal.getNombre().equalsIgnoreCase(nombre)){
+                resultado = resultadoTemporal;
+            }
+            posicionComprobacion++;
         }
-        posicionComprobacion++;
-    }
-    return resultado;
+        return resultado;
 }
 
 //    buscarPorTipoComercio(modelo.TipoComercio tipo)
